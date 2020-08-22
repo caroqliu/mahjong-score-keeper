@@ -3,10 +3,11 @@ import Game from './game.js'
 import './App.css';
 
 const DEFAULT_PLAYER_NAMES = ['East', 'South', 'West', 'North'];
+
 function App() {
   const [points, setPoints] = useState(400)
   const [chips, setChips] = useState(null)
-  const names = useRef(DEFAULT_PLAYER_NAMES)
+  const names = useRef(DEFAULT_PLAYER_NAMES.slice(0))
   const restart = () => {
     names.current = DEFAULT_PLAYER_NAMES;
     setChips(null);
@@ -14,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        { chips == null ?   
+        { chips == null ?  
         <>
           <h1>
             Let's play Mahjong!
@@ -26,7 +27,7 @@ function App() {
           {names.current.map((name, i) => <PlayerName key={'player-' + name} dir={name} index={i} players={names}/>)}
           </p>
           <button className="start-game" onClick={() => setChips(points)}>Start</button>
-        </> : <Game chips={chips} players={names.current} onRestart={restart}/>}
+        </>: <Game chips={chips} players={names.current} onRestart={restart}/>}
       </header>
     </div>
   );
