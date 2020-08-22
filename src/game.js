@@ -6,17 +6,18 @@ export default function Game(props) {
     const perPlayerChips = Math.floor(props.chips / NUM_PLAYERS)
     const [round, setRound] = useState(1);
     return (<>
+        <button className="restart" onClick={() => props.onRestart()}>Restart</button>
         <p>Round {round}</p>
         <div className="player-container">
             <div className="top">
-                <Player name={props.players[0]} points={perPlayerChips}/>
+                <Player dir="east" name={props.players[0]} points={perPlayerChips}/>
             </div>
             <div className="middle">
-                <Player name={props.players[1]} points={perPlayerChips}/>
-                <Player name={props.players[2]} points={perPlayerChips}/>
+                <Player dir="north" name={props.players[3]} points={perPlayerChips}/>
+                <Player dir="south" name={props.players[1]} points={perPlayerChips}/>
             </div>
             <div className="bottom">
-                <Player name={props.players[3]} points={perPlayerChips}/>
+                <Player dir="west" name={props.players[2]} points={perPlayerChips}/>
             </div>
         </div>
     </>);
