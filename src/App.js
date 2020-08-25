@@ -9,7 +9,7 @@ function App() {
   const [chips, setChips] = useState(null)
   const names = useRef(DEFAULT_PLAYER_NAMES.slice(0))
   const restart = () => {
-    names.current = DEFAULT_PLAYER_NAMES;
+    names.current = DEFAULT_PLAYER_NAMES.slice(0);
     setChips(null);
   };
   return (
