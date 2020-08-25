@@ -37,7 +37,7 @@ function PlayerName({index, dir, players}) {
   const [name, setName] = useState(dir);
   useEffect(() => {players.current[index] = name}, [name, index, players])
   return ( <input placeholder={dir}
-  onChange={e => setName(e.target.value)} />)
+  onChange={e => setName(e.target.value || dir)} />)
 }
 
 export default App;
