@@ -35,6 +35,16 @@
     border-radius: 15px;
 }
 
+.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+.active::after {
+  position: relative;
+  top: 40px;
+  font-size: 8pt;
+  content: "(current round master)";
+}
+
 .player > button {
     padding: 10px;
 }

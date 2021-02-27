@@ -29,17 +29,20 @@ export default function Game(props) {
     return (<>
         <button className="restart" onClick={onRestart}>Restart</button>
         <span>Wind: {WINDS[wind]}</span>
-        <span>Round Master: {players[roundMaster.current]}</span>
         <div className="player-container">
             <div className="top">
-                <Player dir="east" onWin={onWin(0)} name={players[0]} points={playerTotals.current[0]}/>
+                <Player dir="east" onWin={onWin(0)} name={players[0]}
+                className={roundMaster.current == 0 ? "active" : ""} points={playerTotals.current[0]}/>
             </div>
             <div className="middle">
-                <Player dir="north" onWin={onWin(3)} name={players[3]} points={playerTotals.current[3]}/>
-                <Player dir="south" onWin={onWin(1)} name={players[1]} points={playerTotals.current[1]}/>
+                <Player dir="north" onWin={onWin(3)} name={players[3]}
+                className={roundMaster.current == 3 ? "active" : ""} points={playerTotals.current[3]}/>
+                <Player dir="south" onWin={onWin(1)} name={players[1]}
+                className={roundMaster.current == 1 ? "active" : ""} points={playerTotals.current[1]}/>
             </div>
             <div className="bottom">
-                <Player dir="west" onWin={onWin(2)} name={players[2]} points={playerTotals.current[2]}/>
+                <Player dir="west" onWin={onWin(2)} name={players[2]}
+                className={roundMaster.current == 2 ? "active" : ""} points={playerTotals.current[2]}/>
             </div>
         </div>
     </>);
