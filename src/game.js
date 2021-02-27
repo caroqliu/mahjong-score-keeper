@@ -2,7 +2,7 @@ import React, {useState, useRef} from 'react';
 import './game.css';
 
 const NUM_PLAYERS = 4;
-const WINDS = ['East', 'South', 'West', 'North'];
+const WINDS = ['东', '南', '西', '北'];
 
 export default function Game(props) {
     const {chips, onRestart, players} = props;

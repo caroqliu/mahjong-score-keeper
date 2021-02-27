@@ -3,7 +3,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -13,14 +12,19 @@
   color: white;
 }
 
+p {
+  max-width: 800px;
+}
+
 input, button.start-game {
   font-size: calc(10px + 2vmin);
   margin: 10px;
   padding: 10px;
   text-align: center;
+  border: none;
   border-radius: 15px;
 }
 
 button.start-game {
-  width: 40vw;
+  border: 1px solid green;
 }

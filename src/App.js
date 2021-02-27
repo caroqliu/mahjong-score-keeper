@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Game from './game.js'
 import './App.css';
 
-const DEFAULT_PLAYER_NAMES = ['East', 'South', 'West', 'North'];
+const DEFAULT_PLAYER_NAMES = ['东', '南', '西', '北'];
 
 function App() {
   const [points, setPoints] = useState(400)
@@ -14,8 +14,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        { gameInProgress ? 
-        <Game chips={chips} players={names.current} onRestart={restart}/> :
+        { gameInProgress ?
+        <Game chips={points} players={names.current} onRestart={restart}/> :
         <>
           <h1>
             Let's play Mahjong!
@@ -26,7 +26,7 @@ function App() {
           <p>Who is playing?<br />
           {names.current.map((name, i) => <PlayerName key={'player-' + name} dir={name} index={i} players={names}/>)}
           </p>
-          <button className="start-game" onClick={() => setGameInProgress(true)}>Start</button>
+          <button className="start-game" onClick={() => setGameInProgress(true)}>开始!</button>
         </>}
       </header>
     </div>
