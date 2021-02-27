@@ -27,7 +27,7 @@ export default function Game(props) {
         setRound(x => x + 1);
     }
     return (<>
-        <button className="restart" onClick={onRestart}>Restart</button>
+        <button className="restart" onClick={onRestart}>重新开始</button>
         <span>Wind: {WINDS[wind]}</span>
         <div className="player-container">
             <div className="top">
@@ -50,9 +50,10 @@ export default function Game(props) {
 
 function Player({name, points, className, onWin}) {
     return <div className={className + " player"}>
-        <div><p>
-            Score: {points}
-        </p>
+        <div>
+          <p>
+            {points}
+          </p>
         </div>
         <button onClick={() => onWin(name)}>{name} won!</button>
     </div>;
